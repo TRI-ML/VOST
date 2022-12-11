@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67835289-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-67835289-3');
+</script>
+
+<!-- ======================================================================= -->
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<style type="text/css">
+  body {
+    /* font-family: "Titillium Web","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
+    font-family: "Avenir", sans-serif;
+    font-weight:400;
+    font-size:18px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1100px;
+  }
+
+  h1 {
+    font-weight:300;
+  }
+
+  .column {
+    float: left;
+    /* width: 50%; */
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .disclaimerbox {
+    background-color: #eee;
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    padding: 20px;
+  }
+
+  video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.header-img {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.rounded {
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  a:link,a:visited
+  {
+    color: #1367a7;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #208799;
+  }
+
+  td.dl-link {
+    height: 160px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+            15px 15px 0 0px #fff, /* The fourth layer */
+            15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+            20px 20px 0 0px #fff, /* The fifth layer */
+            20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+            25px 25px 0 0px #fff, /* The fifth layer */
+            25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+
+  .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+
+  .vert-cent {
+    position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  hr
+  {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+
+  #authors td {
+    padding-bottom:5px;
+    padding-top:30px;
+  }
+</style>
+
+
+<html>
+  <head>
+
+	<title>VOST: Video Object Segmentation under Transformations</title>
+	<meta property="og:title" content="VOST: Video Object Segmentation under Transformation" />
+	<meta property="og:image" content="" />
+	<meta property="og:image:width" content="3000" />
+	<meta property="og:image:height" content="800" />
+  </head>
+
+  <body style="background-color:rgb(9, 10, 10);">
+    <br><br><br><br>
+          <center>
+          	<span style="font-size:38px;color: #eee;">VOST: Video Object Segmentation under Transformations</span>
+            <br><br>
+
+	  		  <table align=center width=650px style="font-size:20px;">
+	  			  <tr>
+              <td align=center width=150px>
+                <center>
+                  <span><a href="https://arxiv.org/"> [Paper]</a></span>
+                  </center>
+                  </td>
+              <td align=center width=150px>
+                <center>
+                  <span><a href="data.html"> [Data]</a></span>
+                  </center>
+                  </td>
+	  	          <td align=center width=150px>
+	  					<center>
+	  						<span><a href="code.html"> [Code]</a></span>
+		  		  		</center>
+		  		  	  </td>
+              </tr>
+	  			  <tr>
+			  </table>
+        <br>
+        <br>
+  		  <table align=center width=1100>
+  			  <tr>
+            <td width=300px>
+    					<center>
+    	                	<a href="figs/1403_cut_corn.gif"><img src = "figs/1403_cut_corn.gif" width="90%"></img></href></a><br>
+  					  </center>
+            </td>
+            <td width=225px>
+    					<center>
+    	                	<a href="figs/4751_mold_clay.gif"><img src = "figs/4751_mold_clay.gif" width="90%"></img></href></a><br>
+  					  </center>
+            </td>
+            <td width=300px>
+    					<center>
+    	                	<a href="figs/3525_break_eggs.gif"><img src = "figs/3525_break_eggs.gif" width="90%"></img></href></a><br>
+  					  </center>
+            </td>
+            <td width=225px>
+    					<center>
+    	                	<a href="figs/9699_divide_wheel.gif"><img src = "figs/9699_divide_wheel.gif" width="90%"></img></href></a><br>
+  					  </center>
+            </td>
+          </tr>
+  		  </table>
+      </center>
+
+		  <hr>
+
+  		  <table align=center>
+          <div class='row'>
+              <center>
+                <h1 style="color:rgb(234, 242, 242);">Dataset</h1>
+                <p style="width:960px; text-align:left; color:rgb(234, 242, 242);">VOST is a semi-supervised video object segmentation benchmark that focuses on complex object transformations. Differently from existing datasets, objects in VOST are broken, torn and molded into new shapes, dramatically changing their overall appearance. As our experiments demonstrate, this presents a major challenge for the mainstream, appearance-centric VOS methods. 
+                  The dataset consists of more than 700 high-resolution videos, captured in diverse environments, which are 20 seconds long on average and densely labeled with instance masks. A careful, multi-step approach is adopted to ensure that these videos focus on complex transformations, capturing their full temporal extent. Below, we provide a few key statistics of the dataset. 
+                </p>
+              </center>
+              <ul style="color:rgb(234, 242, 242);padding-left:2.5cm">
+                <li style="padding-left: 10px;margin-bottom: 10px">Number of videos: 712</li>
+                <li style="padding-left: 10px;margin-bottom: 10px">Number of frames: 71 805</li>
+                <li style="padding-left: 10px;margin-bottom: 10px">Number of transformations: 51</li>
+                <li style="padding-left: 10px;margin-bottom: 10px">Number of object categories: 154</li>
+                <li style="padding-left: 10px;margin-bottom: 10px">Annotation rate: 5 fps</li>
+                <li style="padding-left: 10px">Average video length: 20.2 seconds</li>
+              </ul>
+          </div>
+        </table>
+        <br>
+		  </table>
+
+		  <hr>
+
+      <center>
+      <h1 style="color:rgb(234, 242, 242);">Baseline Results</h1>
+      <table border="0" align="center" cellspacing="0" cellpadding="20">
+        <div class='row'>
+          <center>
+
+            <p style="width:960px; text-align:left; color:rgb(234, 242, 242);">The video below shows the outputs of the AOT+ baseline from our paper on a few videos from the validation and test sets of VOST. AOT+ is an extension of <a href="https://proceedings.neurips.cc/paper/2021/file/147702db07145348245dc5a2f2fe5683-Paper.pdf">AOT</a> which improves its spatio-temporal modeling capacity. However, this model still largely relies on static appearance cues and struggles with complex transformations.
+            </p>
+          </center>
+          </div>
+          <td align="center" valign="middle">
+            <iframe width="800" height="450" src="https://www.youtube.com/embed/dw0SU6o7yfQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </td>
+      </table>
+      </center>
+
+
+      <hr>
+  		  <!-- <table align=center width=550px> -->
+  		  <table align=center width=800px>
+	 		<center><h1 style="color:rgb(234, 242, 242);">Paper</h1></center>
+  			  <tr>
+				  <td><a href=""><img class="layered-paper-big" style="height:175px" src="./figs/firstpage.png"/></a></td>
+				  <td><span style="color:rgb(234, 242, 242);font-size:14pt">Pavel Tokmakov, Jie Li, Adrien Gaidon.<br>
+				  <i><a href="https://arxiv.org/">Breaking the “Object” in Video Object Segmentation.</a></i><br>
+				  arXiv 2022.<br>
+				  </a>
+          <span style="font-size:4pt"><a href=""><br></a>
+				  </span>
+				  </td>
+  	              </td>
+              </tr>
+  		  </table>
+		  <br>
+
+		  <table align=center width=600px>
+			  <tr>
+				  <td><span style="font-size:14pt"><center>
+				  	<a href="./figs/bibtex.txt">[Bibtex]</a>
+  	              </center></td>
+              </tr>
+  		  </table>
+
+        <hr>
+
+  		  </table>
+
+			</left>
+		</td>
+			 </tr>
+		</table>
+
+		<br><br>
+
+
+</body>
+</html>
