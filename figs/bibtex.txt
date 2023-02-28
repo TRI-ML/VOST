@@ -1,6 +1,6 @@
-@inproceedings{tokmakov2022breaking,
+@inproceedings{tokmakov2023breaking,
   title={Breaking the “Object” in Video Object Segmentation},
   author={Tokmakov, Pavel and Li, Jie and Gaidon, Adrien},
-  booktitle={arXiv},
-  year={2022}
+  booktitle={CVPR},
+  year={2023}
 }
