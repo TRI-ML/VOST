@@ -13,14 +13,14 @@ This is the implementation of AOT+ baseline used in [VOST](https://www.vostdatas
 ## Training and evalaution
 1. Link the VOST folder in [datasets/VOST](datasets/VOST)
 
-1. To evaluate the pre-trained AOT+ model on the validation set of VOST download it from [here](https://tri-ml-public.s3.amazonaws.com/datasets/aotplus.pth) into the [pretrain_models](pretrain_models) folder and run the following command:
+2. To evaluate the pre-trained AOT+ model on the validation set of VOST download it from [here](https://tri-ml-public.s3.amazonaws.com/datasets/aotplus.pth) into the [pretrain_models](pretrain_models) folder and run the following command:
 
     ~~~
     python tools/eval.py --exp_name aotplus --stage pre_vost --model r50_aotl --dataset vost --split val --gpu_num 8 --ckpt_path pretrain_models/aotplus.pth --ms 1.0 1.1 1.2 0.9 0.8
     ~~~ 
     To compute the metrics please refer to the [evaluation](../evaluation/) folder.
 
-2. To train AOT+ on VOST yourself download the chekpoint pre-trained on static imges and YouTubeVOS from [here](https://tri-ml-public.s3.amazonaws.com/datasets/pre_ytb.pth) into the [pretrain_models](pretrain_models) and run this script:
+3. To train AOT+ on VOST yourself download the chekpoint pre-trained on static imges and YouTubeVOS from [here](https://tri-ml-public.s3.amazonaws.com/datasets/pre_ytb.pth) into the [pretrain_models](pretrain_models) and run this script:
 
      ~~~
     sh train_vost.sh
