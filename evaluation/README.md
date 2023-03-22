@@ -3,11 +3,13 @@
 This package is dervied from  <a href="https://davischallenge.org/davis2017/code.html" target="_blank">DAVIS 2017</a> evaluation implementation and used to evaluate semi-supervised video multi-object segmentation models for the <a href="https://www.vostdataset.org" target="_blank">VOST</a> dataset. 
 
 ## Installation
+Download the code:
 ```bash
-# Download the code
-git clone https://github.com/TRI-ML/VOST.git && cd evaluation
-# Install it - Python 3.6 or higher required
-python setup.py install
+git clone https://github.com/TRI-ML/VOST.git
+```
+Install the required dependencies:
+```bash
+pip install numpy Pillow opencv-python pandas scikit-image scikit-learn tqdm scipy
 ```
 
 ## Evaluation
