@@ -29,6 +29,33 @@
     font-weight:300;
   }
 
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.circle {
+			border-radius: 50%;
+			width: 150px;
+			height: 150px;
+			object-fit: cover;
+			object-position: center;
+			margin: 10px;
+			background-color: #f2f2f2;
+			border: 2px solid #ccc;
+			box-shadow: 0 0 8px rgba(0,0,0,0.3);
+		}
+
+		.caption {
+      color: #ffffff;
+			margin-top: 5px;
+			text-align: center;
+			font-weight: bold;
+			font-size: 16px;
+		}
+
+
   .column {
     float: left;
     /* width: 50%; */
@@ -249,21 +276,40 @@
 
       <hr style="color:white;background-color:white;height:2px">
 
-      <table align='center'>
-        <div class='row'>
-            <center>
-              <h1 style="color:rgb(234, 242, 242);">Speakers</h1>
-            </center>
-            <ul style="color:rgb(234, 242, 242);padding-left:2.5cm">
-              <li style="padding-left: 1px;margin-bottom: 10px"><b><a href="https://www.cs.utexas.edu/users/grauman/"  style="color: rgb(141, 206, 236);">Prof. Kristen Grauman</a></b>, UT Austin and Meta</li>
-              <li style="padding-left: 1px;margin-bottom: 10px"><b><a href="http://www.cs.columbia.edu/~vondrick/"  style="color: rgb(141, 206, 236);">Prof. Carl Vondrick</a></b>, Columbia University</li>
-              <li style="padding-left: 1px;margin-bottom: 10px"><b><a href="https://research.google/people/CordeliaSchmid/"  style="color: rgb(141, 206, 236);">Dr. Cordelia Schmid</a></b>, Inria and Google Research </li>
-              <li style="padding-left: 1px;margin-bottom: 10px"><b><a href="https://adamharley.com"  style="color: rgb(141, 206, 236);">Dr. Adam Harley</a></b>, Stanford University</li>
-              <li style="padding-left: 1px;margin-bottom: 10px"><b><a href="https://dvl.in.tum.de/team/lealtaixe/"  style="color: rgb(141, 206, 236);">Prof. Laura Leal-Taixe</a></b>, TUM and NVIDIA </li>
-              <li style="padding-left: 1px;margin-bottom: 10px"><b><a href="https://tkipf.github.io/"  style="color: rgb(141, 206, 236);">Dr. Thomas Kipf</a></b>, Google Brain </li>
-            </ul>
-        </div>
-      </table>
+
+      <center>
+        <h1 style="color:rgb(234, 242, 242);margin-bottom: -3px;">Speakers</h1>
+      </center>
+	<div class="container">
+		<figure>
+			<img class="circle" src="https://www.cs.utexas.edu/users/grauman/kristen.jpg" alt="Prof. Kristen Grauman">
+			<figcaption class="caption"><a href="https://www.cs.utexas.edu/users/grauman/"  style="color: rgb(141, 206, 236);">Prof. Kristen Grauman</a></figcaption>
+		</figure>
+		<figure>
+			<img class="circle" src="http://www.cs.columbia.edu/~vondrick/photo-me2.jpg" alt="Prof. Carl Vondrick">
+			<figcaption class="caption"><a href="http://www.cs.columbia.edu/~vondrick/"  style="color: rgb(141, 206, 236);">Prof. Carl Vondrick</a></figcaption>
+		</figure>
+		<figure>
+			<img class="circle" src="https://thoth.inrialpes.fr/~schmid/images/photoCordelia.gif" alt="Dr. Cordelia Schmid">
+			<figcaption class="caption"><a href="https://research.google/people/CordeliaSchmid/"  style="color: rgb(141, 206, 236);">Dr. Cordelia Schmid</a></figcaption>
+		</figure>
+	</div>
+	<div class="container">
+		<figure>
+			<img class="circle" src="https://adamharley.com/images/face_gates2.jpg" alt="Dr. Adam Harley">
+			<figcaption class="caption"><a href="https://adamharley.com/"  style="color: rgb(141, 206, 236);">Dr. Adam Harley</a></figcaption>
+		</figure>
+		<figure>
+			<img class="circle" src="https://dvl.in.tum.de/img/people/lealtaixe.jpg" alt="Prof. Laura Leal-Taixe">
+			<figcaption class="caption"><a href="https://dvl.in.tum.de/team/lealtaixe/"  style="color: rgb(141, 206, 236);">Prof. Laura Leal-Taixe</a></figcaption>
+		</figure>
+		<figure>
+			<img class="circle" src="https://tkipf.github.io/images/photo.jpg" alt="Dr. Thomas Kipf">
+			<figcaption class="caption"><a href="https://tkipf.github.io/"  style="color: rgb(141, 206, 236);">Dr. Thomas Kipf</a></figcaption>
+		</figure>
+	</div>
+
+
       <br>
 
 		  <hr style="color:white;background-color:white;height:2px">
