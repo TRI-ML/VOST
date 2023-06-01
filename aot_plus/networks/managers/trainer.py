@@ -332,8 +332,6 @@ class Trainer(object):
                 enable_prev_frame=self.enable_prev_frame,
                 max_obj_n=cfg.MODEL_MAX_OBJ_NUM,
                 ignore_thresh=cfg.DATA_VOST_IGNORE_THRESH,
-                all_frames=cfg.DATA_VOST_ALL_FRAMES,
-                only_valid=cfg.DATA_VOST_VALID_FRAMES,
                 ignore_in_merge=cfg.IGNORE_IN_MERGE)
             train_datasets.append(train_vost_dataset)
         

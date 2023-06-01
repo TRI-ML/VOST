@@ -250,10 +250,8 @@ class VOSTrain(Dataset):
                  enable_prev_frame=False,
                  merge_prob=0.3,
                  max_obj_n=10,
-                 valid_frames=None,
                  ignore_thresh=1.0,
-                 ignore_in_merge=False,
-                 dense_frames=False):
+                 ignore_in_merge=False):
         self.image_root = image_root
         self.label_root = label_root
         self.rand_gap = rand_gap
@@ -268,10 +266,10 @@ class VOSTrain(Dataset):
         self.rgb = rgb
         self.imglistdic = imglistdic
         self.seqs = list(self.imglistdic.keys())
-        self.valid_frames = valid_frames
+        # maximum allowed fraction of ignored pixels to objects pixels for a frame to be used as a reference frame during training (used to avoid initilizaign the model with very noisy frames).
         self.ignore_thresh = ignore_thresh
+        # if true, use the union of ignore regions of the two samples when merging them
         self.ignore_in_merge = ignore_in_merge
-        self.dense_frames = dense_frames
         print('Video Num: {} X {}'.format(len(self.seqs), self.repeat_time))
 
     def __len__(self):
@@ -325,10 +323,6 @@ class VOSTrain(Dataset):
                          max_try=40,
                          total_gap=0,
                          ignore_thresh=0.2):
-        valid_frames_seq = None
-        if self.valid_frames is not None and len(self.valid_frames[seqname]) != 0:
-            valid_frames_seq = self.valid_frames[seqname]
-        
         search_range = len(lablist) - total_gap
         if search_range <= 1:
             return 0
@@ -338,10 +332,6 @@ class VOSTrain(Dataset):
             if ref_index in bad_indices:
                 continue
             frame_name = lablist[ref_index].split('.')[0] + '.jpg'
-            if valid_frames_seq is not None and frame_name not in valid_frames_seq:
-                bad_indices.append(ref_index)
-                # print('Skipping frame %s for seq %s' % (lablist[ref_index], seqname))
-                continue
             ref_label = Image.open(
                 os.path.join(self.label_root, seqname, lablist[ref_index]))
             ref_label = np.array(ref_label, dtype=np.uint8)
@@ -503,8 +493,6 @@ class VOSTrain(Dataset):
             else:  # prev frame is next to ref frame
                 if dense_seq is None:
                     dense_seq = False
-                    # if self.dense_frames and random.random() >= 0.5:
-                    #     dense_seq = True
                 # get ref frame
                 ref_index = self.get_ref_index_v2(seqname, lablist, ignore_thresh=self.ignore_thresh, total_gap=self.seq_len)
                 # frame_name = lablist[ref_index].split('.')[0] 
@@ -681,12 +669,8 @@ class VOST_Train(VOSTrain):
                  max_obj_n=10,
                  merge_prob=0.3,
                  ignore_thresh=1.0,
-                 all_frames=False,
-                 only_valid=False,
                  ignore_in_merge=False):
         image_root = os.path.join(root, 'JPEGImages')
-        if all_frames:
-            image_root = os.path.join(root, 'frames_eval')
         label_root = os.path.join(root, 'Annotations')
         valid_root = os.path.join(root, 'ValidAnns')
         seq_names = []
@@ -697,27 +681,6 @@ class VOST_Train(VOSTrain):
             seqs_tmp = list(map(lambda elem: elem.strip(), seqs_tmp))
             seq_names.extend(seqs_tmp)
         imglistdic = {}
-        valid_frames_dict = {}
-        for seq_name in seq_names:
-            images = list(
-                np.sort(os.listdir(os.path.join(image_root, seq_name))))
-            labels = list(
-                np.sort(os.listdir(os.path.join(label_root, seq_name))))
-            imglistdic[seq_name] = (images, labels)
-
-            if only_valid:
-                valid_path = os.path.join(valid_root, seq_name) + '.json'
-                if not exists(valid_path):
-                    valid_frames_dict[seq_name] = []
-                    print('No valid frame annotations found for %s' % seq_name)
-                    print(valid_path)
-                    continue
-
-                valid_frames = json.load(open(valid_path))
-                valid_frames_dict[seq_name] = list(np.sort(valid_frames))
-            else:
-                valid_frames_dict = None
-
         super(VOST_Train, self).__init__(image_root,
                                               label_root,
                                               imglistdic,
@@ -731,10 +694,8 @@ class VOST_Train(VOSTrain):
                                               enable_prev_frame,
                                               merge_prob=merge_prob,
                                               max_obj_n=max_obj_n,
-                                              valid_frames=valid_frames_dict,
                                               ignore_thresh=ignore_thresh,
-                                              ignore_in_merge=ignore_in_merge,
-                                              dense_frames=all_frames)
+                                              ignore_in_merge=ignore_in_merge)
 
 class VISOR_Train(VOSTrain):
     def __init__(self,
@@ -763,15 +724,12 @@ class VISOR_Train(VOSTrain):
             seqs_tmp = list(map(lambda elem: elem.strip(), seqs_tmp))
             seq_names.extend(seqs_tmp)
         imglistdic = {}
-        valid_frames_dict = {}
         for seq_name in seq_names:
             images = list(
                 np.sort(os.listdir(os.path.join(image_root, seq_name))))
             labels = list(
                 np.sort(os.listdir(os.path.join(label_root, seq_name))))
             imglistdic[seq_name] = (images, labels)
-
-            valid_frames_dict = None
 
         super(VISOR_Train, self).__init__(image_root,
                                               label_root,
