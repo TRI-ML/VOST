@@ -1,5 +1,5 @@
 # AOT+
-This is the implementation of AOT+ baseline used in [VOST](https://www.vostdataset.org) dataset. The implementation is drived from [AOT](https://github.com/z-x-yang/AOT).
+This is the implementation of AOT+ baseline used in [VOST](https://www.vostdataset.org) dataset. The implementation is derived from [AOT](https://github.com/z-x-yang/AOT).
 
 ## Installation
  We provide a Docker file to re-create the environment which was used in our experiments under `$AOT_ROOT/docker/Dockerfile`. You can either configure the environment yourself using the docker file as a guide or build it via:
