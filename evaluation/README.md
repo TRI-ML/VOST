@@ -1,6 +1,6 @@
 # Semi-supervised VOS evaluation
 
-This package is dervied from  <a href="https://davischallenge.org/davis2017/code.html" target="_blank">DAVIS 2017</a> evaluation implementation and used to evaluate semi-supervised video multi-object segmentation models for the <a href="https://www.vostdataset.org" target="_blank">VOST</a> dataset. 
+This package is derived from  <a href="https://davischallenge.org/davis2017/code.html" target="_blank">DAVIS 2017</a> evaluation implementation and used to evaluate semi-supervised video multi-object segmentation models for the <a href="https://www.vostdataset.org" target="_blank">VOST</a> dataset. 
 
 ## Installation
 Download the code:
@@ -13,7 +13,7 @@ pip install numpy Pillow opencv-python pandas scikit-image scikit-learn tqdm sci
 ```
 
 ## Evaluation
-In order to evaluate your method onthe validation set of VOST, execute the following command:
+In order to evaluate your method on the validation set of VOST, execute the following command:
 ```bash
 python evaluation_method.py --results_path PATH_TO_YOUR_RESULTS --dataset_path PATH_TO_VOST --set val
 ```
