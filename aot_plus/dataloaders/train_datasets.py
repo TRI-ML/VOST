@@ -681,6 +681,12 @@ class VOST_Train(VOSTrain):
             seqs_tmp = list(map(lambda elem: elem.strip(), seqs_tmp))
             seq_names.extend(seqs_tmp)
         imglistdic = {}
+        for seq_name in seq_names:
+            images = list(
+                np.sort(os.listdir(os.path.join(image_root, seq_name))))
+            labels = list(
+                np.sort(os.listdir(os.path.join(label_root, seq_name))))
+            imglistdic[seq_name] = (images, labels)
         super(VOST_Train, self).__init__(image_root,
                                               label_root,
                                               imglistdic,
