@@ -115,6 +115,29 @@
     font-size: 22px;
   }
 
+  th, td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+  }
+  th:first-child,
+  td:first-child {
+    width: 19%; /* Adjust the width of the first column as needed */
+    text-align: center
+  }
+  th:nth-child(2),
+  td:nth-child(2) {
+    width: 25%; /* Adjust the width of the second column as needed */
+  }
+  th {
+    background-color: #333;
+  }
+  tr.coffee-break, tr.lunch, tr.round-table {
+    background-color: #444;
+    color: white;
+    text-align: center; /* Center-align the content in these rows */
+  }
+
   .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
     box-shadow:
             0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
@@ -183,27 +206,27 @@
             <br><br>
             <table align=center width=850px style="font-size:20px;color: #eee;">
               <tr>
-                <td align=center width=150px>
+                <td align=center width=150px style="border: 0px">
                   <center>
                     <span><a href="index.html"  style="color: rgb(141, 206, 236);"> [Home]</a></span>
                     </center>
                     </td>
-                <td align=center width=150px>
+                <td align=center width=150px style="border: 0px">
                   <center>
                     <span><a href="https://arxiv.org/abs/2212.06200"  style="color: rgb(141, 206, 236);"> [Paper]</a></span>
                     </center>
                     </td>
-                <td align=center width=150px>
+                <td align=center width=150px style="border: 0px">
                   <center>
                     <span><a href="data.html"  style="color: rgb(141, 206, 236);"> [Data]</a></span>
                     </center>
                     </td>
-                  <td align=center width=150px>
+                  <td align=center width=150px style="border: 0px">
                 <center>
                   <span><a href="https://github.com/TRI-ML/VOST"  style="color: rgb(141, 206, 236);"> [Code]</a></span>
                   </center>
                   </td>
-                  <td align=center width=150px>
+                  <td align=center width=150px style="border: 0px">
                     <center>
                       <span><a href="workshop.html" style="color: rgb(141, 206, 236);"> [Workshop]</a></span>
                       </center>
@@ -215,22 +238,22 @@
 
           <table align=center width=1100>
             <tr>
-              <td width=294px>
+              <td width=294px style="border: 0px">
                 <center>
                           <a href="figs/skater.gif"><img src = "figs/skater.gif" width="95%"></img></href></a><br>
                 </center>
               </td>
-              <td width=300px>
+              <td width=300px style="border: 0px">
                 <center>
                           <a href="figs/3525_break_eggs.gif"><img src = "figs/3525_break_eggs.gif" width="95%"></img></href></a><br>
                 </center>
               </td>
-              <td width=294px>
+              <td width=294px style="border: 0px">
                 <center>
                           <a href="figs/bear.gif"><img src = "figs/bear.gif" width="95%"></img></href></a><br>
                 </center>
               </td>
-              <td width=225px>
+              <td width=225px style="border: 0px">
                 <center>
                           <a href="figs/4751_mold_clay.gif"><img src = "figs/4751_mold_clay.gif" width="95%"></img></href></a><br>
                 </center>
@@ -256,6 +279,120 @@
         </table>
         <br>
 		  </table>
+
+      <hr style="color:white;background-color:white;height:2px">
+
+      <table align='center'>
+        <div class='row'>
+            <center>
+              <h1 style="color:rgb(234, 242, 242);">Schedule</h1>
+            </center>
+            <table align='center' style="width: 88%;background-color: black;color: white;border-collapse: collapse;">
+              <tr>
+                <th style="text-align: center">Time</th>
+                <th style="text-align: center">Speaker</th>
+                <th style="text-align: center">Topic</th>
+              </tr>
+              <tr>
+                <td>08:30 AM - 08:40 AM</td>
+                <td>Organizers</td>
+                <td>Opening Remarks</td>
+              </tr>
+              <tr>
+                <td>08:40 AM - 09:10 AM</td>
+                <td>Dr. Tim Meinhardt</td>
+                <td>VIS-à-MOT-: A face-to-face of video tracking benchmarks</td>
+              </tr>
+              <tr>
+                <td>09:10 AM - 09:20 AM</td>
+                <td>Organizers</td>
+                <td>Video Object Segmentation track introduction</td>
+              </tr>
+              <tr>
+                <td>09:20 AM - 09:30 AM</td>
+                <td>Organizers</td>
+                <td>Video Object Segmentation under Transformations problem introduction</td>
+              </tr>
+              <tr>
+                <td>09:30 AM - 10:00 AM</td>
+                <td>Challenge participants</td>
+                <td>VOS winning teams talks</td>
+              </tr>
+              <tr>
+                <td>10:00 AM - 10:30 AM</td>
+                <td>Prof. Carl Vondrick</td>
+                <td>All the Ways to Track Occluded Objects</td>
+              </tr>
+              <tr class="coffee-break">
+                <td>10:30 AM - 10:50 AM</td>
+                <td colspan="2" style="text-align: center">Coffee Break</td>
+              </tr>
+              <tr>
+                <td>10:50 AM - 11:20 AM</td>
+                <td>Dr. Benjamin Peters</td>
+                <td>Dynamic object vision in humans and machines: Bridging human cognitive science and computer vision</td>
+              </tr>
+              <tr>
+                <td>11:20 AM - 11:30 AM</td>
+                <td>Organizers</td>
+                <td>Video Instance Segmentation track introduction</td>
+              </tr>
+              <tr>
+                <td>11:30 AM - 12:00 PM</td>
+                <td>Challenge participants</td>
+                <td>VIS winning teams talks</td>
+              </tr>
+              <tr>
+                <td>12:00 PM - 12:30 PM</td>
+                <td>Prof. Kristen Grauman</td>
+                <td>TBD</td>
+              </tr>
+              <tr class="lunch">
+                <td>12:30 PM - 01:30 PM</td>
+                <td colspan="2" style="text-align: center">Lunch</td>
+              </tr>
+              <tr>
+                <td>01:30 PM - 02:00 PM</td>
+                <td>Dr. Adam Harley</td>
+                <td>Large-Scale Fine-Grained Tracking</td>
+              </tr>
+              <tr>
+                <td>02:00 PM - 02:10 PM</td>
+                <td>Organizers</td>
+                <td>Referring VOS track introduction </td>
+              </tr>
+              <tr>
+                <td>02:10 PM - 02:40 PM</td>
+                <td>Challenge participants</td>
+                <td>RVOS winning teams talks</td>
+              </tr>
+              <tr>
+                <td>02:40 PM - 03:10 PM</td>
+                <td>Dr. Cordelia Schmid</td>
+                <td>Dense video object captioning</td>
+              </tr>
+              <tr class="coffee-break">
+                <td>03:10 PM - 03:30 PM</td>
+                <td colspan="2" style="text-align: center">Coffee Break</td>
+              </tr>
+              <tr>
+                <td>03:30 PM - 04:00 PM</td>
+                <td>Dr. Thomas Kipf</td>
+                <td>TBD</td>
+              </tr>
+              <tr class="round-table">
+                <td>04:00 PM - 05:00 PM</td>
+                <td colspan="2" style="text-align: center">Round Table Discussion</td>
+              </tr>
+              <tr>
+                <td>05:00 PM - 05:20 PM</td>
+                <td>Organizers</td>
+                <td>Closing Remarks</td>
+              </tr>
+            </table>
+        </div>
+      </table>
+      <br>
 
       <hr style="color:white;background-color:white;height:2px">
 
@@ -304,8 +441,8 @@
 			<figcaption class="caption"><a href="http://www.imp-frankfurt.de/peters.html#about"  style="color: rgb(141, 206, 236);">Dr. Benjamin Peters</a><br/>University of Glasgow<br/>and Columbia University</figcaption>
 		</figure>
 		<figure>
-			<img class="circle" src="https://dvl.in.tum.de/img/people/lealtaixe.jpg" alt="Prof. Laura Leal-Taixe">
-			<figcaption class="caption"><a href="https://dvl.in.tum.de/team/lealtaixe/"  style="color: rgb(141, 206, 236);">Prof. Laura Leal-Taixe</a><br/>TUM and NVIDIA</figcaption>
+			<img class="circle" src="https://dvl.in.tum.de/img/people/meinhardt.jpg" alt="Dr. Tim Meinhardt">
+			<figcaption class="caption"><a href="https://dvl.in.tum.de/team/meinhardt/"  style="color: rgb(141, 206, 236);">Dr. Tim Meinhardt</a><br/>NVIDIA</figcaption>
 		</figure>
 		<figure>
 			<img class="circle" src="https://tkipf.github.io/images/photo.jpg" alt="Dr. Thomas Kipf">
